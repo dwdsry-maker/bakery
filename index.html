@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ANNA-BAKERY | מאפיית בוטיק ארטיזנלית</title>
+  <meta name="description" content="ANNA-BAKERY - מאפי חמאה, לחמי מחמצת וקינוחי בוטיק בעבודת יד. הזמנה מהירה ישירות לוואטסאפ." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="scroll-pastry-wrapper" aria-hidden="true">
+    <img 
+      id="scroll-rotating-item" 
+      src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=500&q=80" 
+      alt="קרואסון חמאה ארטיזנלי" 
+    />
+  </div>
+
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <span class="logo-accent">ANNA</span>-BAKERY
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#menu">תפריט המאפים</a>
+        <a href="#story">האומנות שלנו</a>
+        <a href="#info">שעות ומיקום</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://wa.me/972538262380?text=%D7%94%D7%99%D7%99%20ANNA-BAKERY!%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A0%D7%95%D7%A1%D7%A4%D7%99%D7%9D" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn-whatsapp-nav" 
+           title="שיחה מהירה בוואטסאפ">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>וואטסאפ</span>
+        </a>
+
+        <button class="cart-trigger" id="open-cart-btn" aria-label="פתח עגלת קניות">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge" id="cart-count">0</span>
+        </button>
+
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="תפריט">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <span class="hero-subtitle">ARTISAN BOULANGERIE & PÂTISSERIE</span>
+      <h1 class="hero-title">שכבות של חמאה,<br>תשוקה ואפייה עילית.</h1>
+      <p class="hero-desc">
+        כל מאפה נאפה מדי בוקר מחומרי הגלם המשובחים ביותר, התפחה איטית של 48 שעות ודיוק בלתי מתפשר. בחרו את המאפים שלכם ושגרו הזמנה ישירות לתנור שלנו.
+      </p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-gold">לתפריט ולהזמנה</a>
+        <a href="https://wa.me/972538262380?text=%D7%94%D7%99%D7%99%20ANNA-BAKERY!%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%94%D7%AA%D7%99%D7%99%D7%A2%D7%A5%20%D7%9C%D7%92%D7%91%D7%99%20%D7%94%D7%96%D7%9E%D7%A0%D7%94" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn btn-outline">
+          <i class="fa-brands fa-whatsapp"></i> הזמנה מהירה בצ'אט
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">הקולקציה היומית</span>
+        <h2 class="section-title">המאפים והקינוחים שלנו</h2>
+        <p class="section-subtitle">סננו לפי העדפה תזונתית, הוסיפו לעגלה ושלחו אלינו בלחיצה אחת לוואטסאפ</p>
+      </div>
+
+      <div class="filter-bar">
+        <div class="filter-buttons" id="filter-buttons">
+          <button class="filter-btn active" data-filter="all">הכל</button>
+          <button class="filter-btn" data-filter="kosher">כשר ✡️</button>
+          <button class="filter-btn" data-filter="vegan">טבעוני 🌱</button>
+          <button class="filter-btn" data-filter="gluten-free">ללא גלוטן 🌾</button>
+        </div>
+
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="חיפוש מאפה, לחם או קינוח..." />
+        </div>
+      </div>
+
+      <div class="products-grid" id="products-grid"></div>
+    </div>
+  </section>
+
+  <section class="story-section" id="story">
+    <div class="container story-grid">
+      <div class="story-image-wrapper">
+        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80" alt="תהליך האפייה ב-ANNA-BAKERY" />
+        <div class="experience-badge">
+          <span class="years">48h</span>
+          <span class="text">התפחה קרה<br>בעבודת יד</span>
+        </div>
+      </div>
+      <div class="story-content">
+        <span class="section-tag">הפילוסופיה שלנו</span>
+        <h2 class="section-title">אין קיצורי דרך כשמדובר בבצק אמיתי</h2>
+        <p>
+          ב-<strong>ANNA-BAKERY</strong> אנחנו מאמינים שמאפה מושלם מתחיל בסבלנות. אנחנו עובדים עם חמאה צרפתית עשירה, מחמצות פרא בנות שנים, שוקולד בלגי מריר ופיסטוקים קלויים במקום.
+        </p>
+        <p>
+          מדי בוקר אנו אופים בכמויות מדויקות כדי להבטיח שכל קרואסון, בריוש או טארט שתזמינו יגיעו אליכם בשיא הפריכות והטריות.
+        </p>
+        <ul class="story-highlights">
+          <li><i class="fa-solid fa-check"></i> חומרי גלם טבעיים ללא משפרי אפייה</li>
+          <li><i class="fa-solid fa-check"></i> אפשרויות טבעוניות וללא גלוטן ברמה גבוהה</li>
+          <li><i class="fa-solid fa-check"></i> מארזי אירוח ומתנה בהתאמה אישית</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-section" id="info">
+    <div class="container info-grid">
+      <div class="info-card">
+        <i class="fa-regular fa-clock info-icon"></i>
+        <h3>שעות פעילות</h3>
+        <p>א׳ - ה׳: 07:30 – 19:00</p>
+        <p>יום ו׳ וערבי חג: 07:30 – 14:30</p>
+        <p class="muted">שבת: סגור</p>
+      </div>
+
+      <div class="info-card">
+        <i class="fa-solid fa-location-dot info-icon"></i>
+        <h3>איסוף ומשלוחים</h3>
+        <p>איסוף עצמי מהמאפייה בתיאום מראש</p>
+        <p>משלוחים מהירים באזור המרכז</p>
+        <p class="muted">הזמנות לאירועים – 48 שעות מראש</p>
+      </div>
+
+      <div class="info-card">
+        <i class="fa-solid fa-certificate info-icon"></i>
+        <h3>כשרות ואלרגנים</h3>
+        <p>חומרי גלם כשרים למהדרין</p>
+        <p>סביבת עבודה מבוקרת ומסומנת</p>
+        <p class="muted">ניתן לסנן מוצרים בתפריט למעלה</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="logo"><span class="logo-accent">ANNA</span>-BAKERY</span>
+        <p>מאפיית בוטיק ארטיזנלית. טריות, אסתטיקה וטעם בלתי נשכח.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://wa.me/972538262380" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ANNA-BAKERY. כל הזכויות שמורות.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/972538262380?text=%D7%94%D7%99%D7%99%20ANNA-BAKERY!%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%93%D7%A8%D7%9A%20%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%94%D7%96%D7%9E%D7%99%D7%9F" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="floating-whatsapp" 
+     aria-label="שלח הודעה בוואטסאפ">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <div class="cart-backdrop" id="cart-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+    <div class="cart-header">
+      <h3>ההזמנה שלך</h3>
+      <button class="close-cart-btn" id="close-cart-btn" aria-label="סגור עגלה">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="cart-items" id="cart-items"></div>
+
+    <div class="cart-footer" id="cart-footer">
+      <div class="checkout-details">
+        <input type="text" id="customer-name" placeholder="השם שלך (חובה להזמנה)" required />
+        
+        <div class="delivery-toggle">
+          <label>
+            <input type="radio" name="deliveryType" value="איסוף עצמי" checked />
+            <span>איסוף עצמי</span>
+          </label>
+          <label>
+            <input type="radio" name="deliveryType" value="משלוח" />
+            <span>משלוח</span>
+          </label>
+        </div>
+
+        <input type="text" id="customer-address" class="hidden" placeholder="כתובת מלאה למשלוח (עיר, רחוב, דירה)" />
+        <input type="text" id="customer-notes" placeholder="הערות למאפייה (אלרגיות, שעת איסוף...)" />
+      </div>
+
+      <div class="cart-total-row">
+        <span>סה״כ לתשלום:</span>
+        <span class="total-price" id="cart-total-price">₪0</span>
+      </div>
+
+      <button class="btn btn-whatsapp-checkout" id="whatsapp-checkout-btn">
+        <i class="fa-brands fa-whatsapp"></i>
+        שלח הזמנה לוואטסאפ
+      </button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast">המוצר נוסף להזמנה!</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
